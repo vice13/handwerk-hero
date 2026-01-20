@@ -112,7 +112,7 @@ if st.button("Angebot aus Bild & Text erstellen") and api_key:
             
             # KI ANFRAGE (Vision Modell)
             completion = client.chat.completions.create(
-                model="llama-3.2-11b-vision-preview", # Das Vision-Modell!
+                model="llama-4-scout-17b-16e-instruct", # Das Vision-Modell!
                 messages=messages,
                 temperature=0,
                 max_tokens=1024
