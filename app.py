@@ -7,7 +7,7 @@ import datetime
 import base64
 
 # --- KONFIGURATION ---
-st.set_page_config(page_title="Handwerk-Hero", page_icon="📸")
+st.set_page_config(page_title="Handwerk-Heroes", page_icon="📸")
 
 # --- FUNKTION: BILD FÜR KI VORBEREITEN ---
 def encode_image(image_file):
