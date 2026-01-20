@@ -28,7 +28,7 @@ with st.sidebar:
 
     # Auswahl: Welches KI-Modell?
     # Wir nehmen jetzt das VISION Modell für Bilder
-    model_choice = "llama-3.2-90b-vision-preview" 
+    model_choice = "meta-llama/llama-4-scout-17b-16e-instruct" 
 
 # --- SESSION STATE ---
 if 'angebot_daten' not in st.session_state:
@@ -112,7 +112,7 @@ if st.button("Angebot aus Bild & Text erstellen") and api_key:
             
             # KI ANFRAGE (Vision Modell)
             completion = client.chat.completions.create(
-                model="llama-3.2-90b-vision-preview", # Das Vision-Modell!
+                model="meta-llama/llama-4-scout-17b-16e-instruct", # Das Vision-Modell!
                 messages=messages,
                 temperature=0,
                 max_tokens=1024
