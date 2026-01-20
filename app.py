@@ -95,9 +95,26 @@ if st.button("Angebot aus Bild & Text erstellen") and api_key:
         try:
             messages = []
             
-            # PROMPT VORBEREITEN
+           # PROMPT VORBEREITEN (Korrigierte Version mit allen Spalten)
             user_content = [
-                {"type": "text", "text": f"Erstelle ein Handwerker-Angebot. Infos: {text_input}. \n\nRegeln:\n1. Erkenne Material/Arbeit auf dem Bild (falls vorhanden).\n2. Schätze Preise (Netto).\n3. JSON Format: [{{'menge': Zahl, 'beschreibung': 'Text', 'einzelpreis': Zahl}}]"}
+                {"type": "text", "text": f"""
+                Analysiere Bild & Text: "{text_input}". Erstelle ein Handwerker-Angebot.
+                
+                Regeln:
+                1. Erkenne Material und Arbeitsschritte genau.
+                2. Schätze marktübliche Netto-Preise.
+                3. WICHTIG: Gib IMMER 'typ' (Material oder Lohn) und 'einheit' an.
+                
+                JSON Format: [
+                    {{
+                        "menge": Zahl, 
+                        "einheit": "Stk/qm/m/Std", 
+                        "beschreibung": "Text", 
+                        "typ": "Material" oder "Lohn", 
+                        "einzelpreis": Zahl
+                    }}
+                ]
+                """}
             ]
             
             # Wenn ein Bild da ist, hängen wir es an die Nachricht an
