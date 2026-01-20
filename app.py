@@ -7,7 +7,7 @@ import datetime
 import base64
 
 # --- KONFIGURATION ---
-st.set_page_config(page_title="Handwerk-Heroes", page_icon="📸")
+st.set_page_config(page_title="Handwerk-Hero", page_icon="📸")
 
 # --- FUNKTION: BILD FÜR KI VORBEREITEN ---
 def encode_image(image_file):
@@ -28,7 +28,7 @@ with st.sidebar:
 
     # Auswahl: Welches KI-Modell?
     # Wir nehmen jetzt das VISION Modell für Bilder
-    model_choice = "llama-4-scout-17b-16e-instruct" 
+    model_choice = "llama-3.2-90b-vision-preview" 
 
 # --- SESSION STATE ---
 if 'angebot_daten' not in st.session_state:
@@ -112,7 +112,7 @@ if st.button("Angebot aus Bild & Text erstellen") and api_key:
             
             # KI ANFRAGE (Vision Modell)
             completion = client.chat.completions.create(
-                model="llama-4-scout-17b-16e-instruct", # Das Vision-Modell!
+                model="llama-3.2-90b-vision-preview", # Das Vision-Modell!
                 messages=messages,
                 temperature=0,
                 max_tokens=1024
