@@ -28,7 +28,7 @@ with st.sidebar:
 
     # Auswahl: Welches KI-Modell?
     # Wir nehmen jetzt das VISION Modell für Bilder
-    model_choice = "llama-3.2-11b-vision-preview" 
+    model_choice = "llama-4-scout-17b-16e-instruct" 
 
 # --- SESSION STATE ---
 if 'angebot_daten' not in st.session_state:
